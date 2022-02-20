@@ -29,4 +29,6 @@ set -gx PATH $GOPATH/bin $PATH
 
 
 starship init fish | source
+fish_vi_key_bindings
 neofetch 
+
