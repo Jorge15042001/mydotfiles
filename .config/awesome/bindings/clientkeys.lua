@@ -42,7 +42,7 @@ function _M.get()
         c.maximized = not c.maximized
         c:raise()
       end ,
-      {description = "(un)maximize", group = "client"})
+      {description = "(un)maximize", group = "client"}),
     -- awful.key({ modkey, "Control" }, "m",
     --   function (c)
     --     c.maximized_vertical = not c.maximized_vertical
@@ -55,6 +55,10 @@ function _M.get()
     --     c:raise()
     --   end ,
     --   {description = "(un)maximize horizontally", group = "client"})
+    --
+    --   Language key bindings
+    awful.key({modkey, "Control"},"e",function() awful.spawn("setxkbmap -layout us") end,{description="Change keyboard layout to english",group="Language"}),
+    awful.key({modkey, "Control"},"s",function() awful.spawn("setxkbmap -layout es") end,{description="Change keyboard layout to spanish",group="Language"})
   )
 
   return clientkeys
