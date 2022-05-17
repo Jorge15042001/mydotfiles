@@ -8,6 +8,7 @@ set mouse=a
 
 set backspace=indent,eol,start
 
+set number
 set autoindent
 set nohlsearch
 
@@ -84,6 +85,7 @@ source ~/.config/nvim/plugins/table_mode.vim
 source ~/.config/nvim/plugins/vim_markdown.vim
 source ~/.config/nvim/plugins/vim-pencil.vim
 source ~/.config/nvim/plugins/which-key.vim
+source ~/.config/nvim/plugins/neoformat.vim
 
 call plug#end ()
 
