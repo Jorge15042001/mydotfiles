@@ -235,17 +235,17 @@ function _M.get()
 
     --   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
     -- screenshot
-    awful.key({ altkey }, "p", function() os.execute(CONFIG.vars.screenshot_command) end,
+    awful.key({ altkey }, "p", function() awful.spawn(CONFIG.vars.screenshot_command) end,
               {description = "take a screenshot", group = "screenshot"}),
     --Save screenshot to clipboard
-    awful.key({ altkey , "Control" }, "p", function () os.execute(CONFIG.vars.screenshot_clipboard) end,
+    awful.key({ altkey , "Control" }, "p", function () awful.spawn(CONFIG.vars.screenshot_clipboard) end,
               {description = "Save screenshot to clipboard", group = "screenshot"}) ,
 
     --Save screenshot to system
-    awful.key({ altkey , "Shift" }, "p", function () os.execute(CONFIG.vars.screenshot_save) end,
+    awful.key({ altkey , "Shift" }, "p", function () awful.spawn(CONFIG.vars.screenshot_save) end,
               {description = "Save screenshot to system", group = "screenshot"}) ,
     --Save screenshot to path
-    awful.key({ altkey , modkey}, "p", function () os.execute(CONFIG.vars.screenshot_command_no_path) end,
+    awful.key({ altkey , modkey}, "p", function () awful.spawn(CONFIG.vars.screenshot_command_no_path) end,
               {description = "Save screenshot (chose path)", group = "screenshot"})
 
   )

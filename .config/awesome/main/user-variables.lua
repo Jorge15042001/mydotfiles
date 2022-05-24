@@ -22,10 +22,10 @@ local _M = {
   --wallpaper = home .. "/Pictures/your-wallpaper-here.jpg",
 
   -- user's commands
-  screenshot_command = "flameshot gui -p ~/Pictures",
-  screenshot_command_no_path = "flameshot gui ",
+  screenshot_command = "flameshot gui -p ".. home .."/Pictures",
+  screenshot_command_no_path = "flameshot gui",
   screenshot_clipboard = "flameshot full -c",
-  screenshot_save = "flameshot full -p ~/Pictures",
+  screenshot_save = "flameshot full -p " .. home .. "/Pictures",
   -- user's programs
   browser = "firefox"
 }
