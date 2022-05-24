@@ -18,7 +18,7 @@ alias dotfiles 'cd $HOME/.files'
 alias clear '/usr/bin/clear;neofetch '
 
 
-alias config '/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
+alias config '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 ## Lenguaje Go
 set --export GOROOT /usr/local/go
@@ -29,7 +29,7 @@ set -gx PATH $GOPATH/bin $PATH
 
 
 starship init fish | source
-pyenv init - | source
+## pyenv init - | source
 fish_vi_key_bindings
 neofetch 
 
