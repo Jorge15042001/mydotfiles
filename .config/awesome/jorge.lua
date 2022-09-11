@@ -87,6 +87,7 @@ awesome.connect_signal(
     'startup',
     function(args)
         os.execute("nvidia-settings --assign CurrentMetaMode=\"nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }\"")
+        os.execute("barrierc --disable-crypto  --name jorgeDesk 192.168.100.41")
     end
 )
 
