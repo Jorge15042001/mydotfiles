@@ -33,7 +33,7 @@ set termguicolors
 set scrolloff=8
 
 
-set completeopt=menuone,noinsert,noselect
+" set completeopt=menuone,noinsert,noselect
 
 let mapleader = "\<space>"
 
@@ -70,6 +70,7 @@ call plug#begin (data_dir . "/plugins")
 
 source ~/.config/nvim/plugins/vim-airline.vim
 source ~/.config/nvim/plugins/ondark.vim "colorscheme
+source ~/.config/nvim/plugins/oneNeoVim.vim "colorscheme
 source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/floaterm.vim
 source ~/.config/nvim/plugins/treesitter.vim
@@ -77,6 +78,7 @@ source ~/.config/nvim/plugins/onebody.vim "colorscheme
 source ~/.config/nvim/plugins/gitgutter.vim
 source ~/.config/nvim/plugins/fugitive.vim
 source ~/.config/nvim/plugins/nerdcommenter.vim
+source ~/.config/nvim/plugins/nerdtree.vim
 
 source ~/.config/nvim/plugins/splits.vim
 source ~/.config/nvim/plugins/vimdebug.vim
@@ -85,17 +87,26 @@ source ~/.config/nvim/plugins/table_mode.vim
 source ~/.config/nvim/plugins/vim_markdown.vim
 " source ~/.config/nvim/plugins/vim-pencil.vim
 source ~/.config/nvim/plugins/which-key.vim
+source ~/.config/nvim/plugins/tailwindcss3.vim
+source ~/.config/nvim/plugins/mergetool.vim
 
 call plug#end ()
 
 doautocmd User PlugLoaded
 
 " color scheme
-colorscheme onedark
+" colorscheme onedark
+" let g:airline_theme='onedark'
+" let g:onedark_config = {
+"   \ 'style': 'darker',
+" \}
+"
+"
+
+colorscheme one-nvim
 let g:airline_theme='onedark'
 let g:onedark_config = {
   \ 'style': 'darker',
 \}
-
 
 

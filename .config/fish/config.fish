@@ -20,6 +20,9 @@ alias clear '/usr/bin/clear;neofetch '
 
 alias config '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+
+alias vimdiff='nvim -d'
+
 ## Lenguaje Go
 set --export GOROOT /usr/local/go
 set -gx PATH /usr/local/go/bin $PATH

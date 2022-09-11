@@ -8,6 +8,7 @@ local wk = require("which-key")
 --  * <leader>fe edit file
 -- and hide <leader>1
 
+
 wk.register({
   -- ["<leader>f"] = { name = "+file" },
   -- ["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Find File" },
