@@ -86,7 +86,7 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 awesome.connect_signal(
     'startup',
     function(args)
-        os.execute("nvidia-settings --assign CurrentMetaMode=\"nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }\"")
+        os.execute("barriers  --disable-client-cert-checking --disable-crypto")
     end
 )
 
