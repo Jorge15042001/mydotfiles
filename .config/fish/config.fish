@@ -23,6 +23,12 @@ alias config '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 alias vimdiff='nvim -d'
 
+
+## setting  PATH to read from ~/.usr_scripts
+set -gx PATH $HOME/.usr_scripts $PATH
+
+
+
 ## Lenguaje Go
 set --export GOROOT /usr/local/go
 set -gx PATH /usr/local/go/bin $PATH
