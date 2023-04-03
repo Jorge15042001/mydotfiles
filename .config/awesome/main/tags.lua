@@ -5,7 +5,7 @@ local _M = {}
 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
-function _M.get ()
+function _M.get()
   local tags = {}
 
   -- ○
@@ -13,30 +13,19 @@ function _M.get ()
   -- ◌
   -- ⚫
   --  ⬤
---⬤
+  --⬤
   -- 〇
   -- local not_selected_names = { "〇", "〇", "〇", "〇", "〇", "〇", "〇", "〇", "〇" }
   -- local     selected_names = { "", "〇", "〇", "〇", "〇", "〇", "〇", "〇", "〇" }
   awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
+    local width = s.geometry.width
+    local height = s.geometry.height
+    local layout_idx = (height > width and { 3 } or { 1 })[1]
     tags[s] = awful.tag(
-      { "〇", "〇", "〇", "〇", "〇", "〇", "〇", "〇", "〇" }, s, CONFIG.layouts[1]
+      { "〇", "〇", "〇", "〇", "〇", "〇", "〇", "〇", "〇" }, s, CONFIG.layouts[layout_idx]
     )
   end)
-  -- change to filled circle on selected tags
-  -- awful.screen.connect_for_each_screen(function (s)
-  --   s.connect_signal("tag::history::update",function (s)
-  --     for k, t in pairs(awful.screen.focused().tags) do
-  --      if awful.tag.selected() == t then
-  --          t.name = long_names[k]
-  --      else
-  --          t.name = short_names[k]
-  --      end
-  --     end
-      
-  --   end)
-  -- end)
-
   return tags
 end
 

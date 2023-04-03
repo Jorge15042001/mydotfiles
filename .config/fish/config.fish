@@ -27,6 +27,8 @@ alias vimdiff='nvim -d'
 ## setting  PATH to read from ~/.usr_scripts
 set -gx PATH $HOME/.usr_scripts $PATH
 
+## setting  PATH to read from ~/.local/bin
+set -gx PATH $HOME/.local/bin $PATH
 
 
 ## Lenguaje Go
@@ -36,10 +38,19 @@ set -gx PATH /usr/local/go/bin $PATH
 set --export GOPATH $HOME/GoProjects
 set -gx PATH $GOPATH/bin $PATH
 
+# set -gx PATH $HOME/anaconda3/bin $PATH  # commented out by conda initialize
+
+
 
 starship init fish | source
 ## pyenv init - | source
 fish_vi_key_bindings
 neofetch 
 
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval /home/jorge1504/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<
 
