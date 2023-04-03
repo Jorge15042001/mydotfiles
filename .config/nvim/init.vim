@@ -3,8 +3,8 @@
 " Set encoding
 set encoding=utf-8
 
-"Enable clicking
-set mouse=a
+"disable clicking
+set mouse=
 
 set backspace=indent,eol,start
 
@@ -85,10 +85,11 @@ source ~/.config/nvim/plugins/vimdebug.vim
 source ~/.config/nvim/plugins/table_mode.vim
 " source ~/.config/nvim/plugins/vim-pandoc.vim
 source ~/.config/nvim/plugins/vim_markdown.vim
-" source ~/.config/nvim/plugins/vim-pencil.vim
+source ~/.config/nvim/plugins/vim-pencil.vim
 source ~/.config/nvim/plugins/which-key.vim
 source ~/.config/nvim/plugins/tailwindcss3.vim
 source ~/.config/nvim/plugins/mergetool.vim
+source ~/.config/nvim/plugins/harpoon.vim
 
 call plug#end ()
 

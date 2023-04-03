@@ -86,7 +86,9 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 awesome.connect_signal(
     'startup',
     function(args)
-        os.execute("barriers  --disable-client-cert-checking --disable-crypto")
+        -- os.execute("barriers  --disable-client-cert-checking --disable-crypto")
+        os.execute("barrierc --disable-crypto  --name jorgeLaptop 192.168.100.14")
+
     end
 )
 

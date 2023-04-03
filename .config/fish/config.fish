@@ -24,6 +24,11 @@ alias config '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias vimdiff='nvim -d'
 
 
+
+#set EDITOR
+set  EDITOR /usr/bin/nvim
+
+
 ## setting  PATH to read from ~/.usr_scripts
 set -gx PATH $HOME/.usr_scripts $PATH
 
