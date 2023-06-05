@@ -32,8 +32,9 @@ set  EDITOR /usr/bin/nvim
 ## setting  PATH to read from ~/.usr_scripts
 set -gx PATH $HOME/.usr_scripts $PATH
 
+## setting  PATH to read from ~/.local/bin
+set -gx PATH $HOME/.local/bin $PATH
 
-set -gx PATH /usr/lib $PATH
 
 ## Lenguaje Go
 set --export GOROOT /usr/local/go
