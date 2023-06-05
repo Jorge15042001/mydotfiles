@@ -11,9 +11,9 @@ function _M.get ()
 
     awful.layout.suit.tile,
     awful.layout.suit.floating,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
+    -- awful.layout.suit.tile.left,
+    -- awful.layout.suit.tile.bottom,
 
 --     awful.layout.suit.fair,
 --     awful.layout.suit.fair.horizontal,
@@ -25,7 +25,7 @@ function _M.get ()
 --     awful.layout.suit.max.fullscreen,
 --     awful.layout.suit.magnifier,
 
-    awful.layout.suit.corner.nw
+    -- awful.layout.suit.corner.nw
 --  awful.layout.suit.corner.ne,
 --  awful.layout.suit.corner.sw,
 --  awful.layout.suit.corner.se,

@@ -43,6 +43,9 @@ set -gx PATH /usr/local/go/bin $PATH
 set --export GOPATH $HOME/GoProjects
 set -gx PATH $GOPATH/bin $PATH
 
+# set -gx PATH $HOME/anaconda3/bin $PATH  # commented out by conda initialize
+
+
 
 starship init fish | source
 ## pyenv init - | source

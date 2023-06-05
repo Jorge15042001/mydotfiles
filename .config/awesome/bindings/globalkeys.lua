@@ -11,6 +11,13 @@ local menubar = require("menubar")
 -- TODO: remove dependency
 local freedesktop = require("freedesktop")
 local beautiful   = require("beautiful")
+local minimized_client_popups = require("utils/unminimize_popup")
+local deco = {
+  wallpaper = require("deco.wallpaper"),
+  taglist   = require("deco.taglist"),
+  tasklist  = require("deco.tasklist")
+}
+local tasklist_buttons = deco.tasklist()
 
 local myawesomemenu = {
    { "Hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
@@ -30,6 +37,8 @@ local mymainmenu = freedesktop.menu.build {
         -- other triads can be put here
     }
 }
+
+
 -- Resource Configuration
 local modkey = CONFIG.vars.modkey
 local altkey = CONFIG.vars.altkey
@@ -167,13 +176,17 @@ function _M.get()
 
     awful.key({ modkey, "Control" }, "n",
               function ()
-                  local c = awful.client.restore()
-                  -- Focus restored client
-                  if c then
-                    c:emit_signal(
-                        "request::activate", "key.unminimize", {raise = true}
-                    )
-                  end
+                  -- local popup_minimized_clients = create_task_list_popup(awful.screen.focused(),awful.widget.tasklist.filter.minimizedcurrenttags,tasklist_buttons,1.)
+                  minimized_client_popups.launch()
+
+
+                  -- local c = awful.client.restore()
+                  -- -- Focus restored client
+                  -- if c then
+                  --   c:emit_signal(
+                  --       "request::activate", "key.unminimize", {raise = true}
+                  --   )
+                  -- end
               end,
               {description = "restore minimized", group = "client"}),
 

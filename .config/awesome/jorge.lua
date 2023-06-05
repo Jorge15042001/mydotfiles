@@ -12,9 +12,9 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
-local gears         = require("gears")
-local awful         = require("awful")
-                      require("awful.autofocus")
+local gears = require("gears")
+local awful = require("awful")
+require("awful.autofocus")
 local wibox         = require("wibox")
 local beautiful     = require("beautiful")
 local naughty       = require("naughty")
@@ -22,8 +22,8 @@ local lain          = require("lain")
 local menubar       = require("menubar")
 local freedesktop   = require("freedesktop")
 local hotkeys_popup = require("awful.hotkeys_popup")
-                      require("awful.hotkeys_popup.keys")
-local mytable       = awful.util.table or gears.table -- 4.{0,1} compatibility
+require("awful.hotkeys_popup.keys")
+local mytable = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 
 
@@ -41,15 +41,15 @@ beautiful.init(string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv
 --beautiful.init("/home/jorge1504/.files/configFiles/awesomewm/awesome/themes/jorge-theme/theme.lua")
 
 -- Custom Local Library
-local main = {
+local main      = {
   layouts = require("main.layouts"),
   tags    = require("main.tags"),
   menu    = require("main.menu"),
   rules   = require("main.rules"),
 }
-CONFIG.layouts = main.layouts()
-CONFIG.tags    = main.tags()
-CONFIG.mainmenu= awful.menu({items = main.menu()})
+CONFIG.layouts  = main.layouts()
+CONFIG.tags     = main.tags()
+CONFIG.mainmenu = awful.menu({ items = main.menu() })
 CONFIG.launcher = awful.widget.launcher(
   { image = beautiful.awesome_icon, menu = CONFIG.mainmenu }
 )
@@ -67,7 +67,7 @@ local bindings = {
 }
 
 -- {{{ Mouse bindings
-CONFIG.globalkeys =  bindings.globalkeys()
+CONFIG.globalkeys = bindings.globalkeys()
 CONFIG.globalkeys = bindings.bindtotags(CONFIG.globalkeys)
 -- }}}
 
@@ -96,11 +96,10 @@ awesome.connect_signal(
 -- TODO: figuire out if this is already on other fiels
 -- This function will run once every time Awesome is started
 local function run_once(cmd_arr)
-    for _, cmd in ipairs(cmd_arr) do
-        awful.spawn.with_shell(string.format("pgrep -u $USER -fx '%s' > /dev/null || (%s)", cmd, cmd))
-    end
+  for _, cmd in ipairs(cmd_arr) do
+    awful.spawn.with_shell(string.format("pgrep -u $USER -fx '%s' > /dev/null || (%s)", cmd, cmd))
+  end
 end
-
 
 -- }}}
 

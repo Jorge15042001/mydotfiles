@@ -1,9 +1,14 @@
 -- Standard awesome library
 local gears = require("gears")
 local awful     = require("awful")
+local beautiful     = require("beautiful")
+
 
 -- Wibox handling library
 local wibox = require("wibox")
+
+local create_task_list = require("utils/tasklists").Create_task_list
+local normalcurrenttags = require("utils/tasklists").normalcurrenttags
 
 -- Custom Local Library: Common Functional Decoration
 local deco = {
@@ -24,6 +29,7 @@ local taglist_buttons  = deco.taglist()
 local tasklist_buttons = deco.tasklist()
 
 local _M = {}
+
 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
@@ -47,7 +53,11 @@ local brightnessWidget = brightness_widget{
 }
 -- brightnessWidget:connect_signal("button::press",function () brightness_widget:inc() end)
 
+-- awful.screen.connect_for_each_screen(function(s)
+--   beautiful.at_screen_connect(s)
+-- end)
 awful.screen.connect_for_each_screen(function(s)
+
   -- Wallpaper
   set_wallpaper(s)
 
@@ -56,13 +66,6 @@ awful.screen.connect_for_each_screen(function(s)
 
   -- Create an imagebox widget which will contain an icon indicating which layout we're using.
   -- We need one layoutbox per screen.
-  s.mylayoutbox = awful.widget.layoutbox(s)
-  s.mylayoutbox:buttons(gears.table.join(
-    awful.button({ }, 1, function () awful.layout.inc( 1) end),
-    awful.button({ }, 3, function () awful.layout.inc(-1) end),
-    awful.button({ }, 4, function () awful.layout.inc( 1) end),
-    awful.button({ }, 5, function () awful.layout.inc(-1) end)
-  ))
 
   -- Create a taglist widget
   s.mytaglist = awful.widget.taglist {
@@ -72,78 +75,37 @@ awful.screen.connect_for_each_screen(function(s)
   }
 
   -- Create a tasklist widget
-  s.mytasklist = awful.widget.tasklist {
-    screen  = s,
-    filter  = awful.widget.tasklist.filter.currenttags,
-    buttons = tasklist_buttons,
-    layout   = {
-       spacing_widget = {
-      --   {
-      --     forced_width  = 5,
-      --     forced_height = 24,
-      --     thickness     = 3,
-      --     color         = '#777777',
-      --     widget        = wibox.widget.separator
-        -- },
-        valign = 'center',
-        halign = 'center',
-        widget = wibox.container.place,
-      },
-      spacing = 5,
-      layout  = wibox.layout.fixed.horizontal
-    },
-    -- Notice that there is *NO* wibox.wibox prefix, it is a template,
-    -- not a widget instance.
-    widget_template = {
-      {
-        wibox.widget.base.make_widget(),
-        forced_height = 5,
-        -- id            = 'background_role',
-        widget        = wibox.container.background,
-      },
-      {
-        {
-          id     = 'clienticon',
-          widget = awful.widget.clienticon,
-        },
-        margins = 0,
-        widget  = wibox.container.margin
-      },
-      nil,
-      create_callback = function(self, c, index, objects) --luacheck: no unused args
-          self:get_children_by_id('clienticon')[1].client = c
-          -- TODO: minimized clients are opaque
-          -- c.connect_signal ("property::minimized", function ()
-            -- self:get_children_by_id('clienticon')[1].client = nil
-          -- end)
-      end,
-      layout = wibox.layout.align.vertical,
-    },
-  }
+  s.mytasklist_minimized = create_task_list(s, awful.widget.tasklist.filter.minimizedcurrenttags,tasklist_buttons,0.5)
+  s.mytasklist = create_task_list(s,normalcurrenttags,tasklist_buttons,0.75)
+  s.mytasklist_focus = create_task_list(s,awful.widget.tasklist.filter.focused,tasklist_buttons,1.)
 
   -- Create the wibox
   s.mywibox = awful.wibar({ position = "top", screen = s })
 
   -- Add widgets to the wibox
   s.mywibox:setup {
-    layout = wibox.layout.flex.horizontal,
+    layout = wibox.layout.align.horizontal,
+    expand = "none",
     { -- left widgets
-      layout = wibox.layout.align.horizontal,
+      layout = wibox.layout.fixed.horizontal,
+      s.mytasklist_minimized,
       s.mytasklist,
+      s.mytasklist_focus,
+      CONFIG.launcher,
+      s.mypromptbox,
+      spacing = 20,
     },
     {
       layout = wibox.layout.flex.horizontal,
-      CONFIG.launcher,
+      max_widget_size = 99999999,
       s.mytaglist,
-      s.mypromptbox,
     },
     { -- Right widgets
-      layout = wibox.layout.align.horizontal,
-      spacer,
-      spacer,
+      layout = wibox.layout.fixed.horizontal,
+      nil,
       {
-        widget = wibox.container.background,
         wibox.widget.systray(), --show aplication widget
+        widget = wibox.container.background,
          batteryarc_widget({
             show_current_level = true,
             arc_thickness = 2,
