@@ -20,6 +20,7 @@ source ~/.config/nvim/plugins/treesitter.vim
 source ~/.config/nvim/plugins/gitgutter.vim
 source ~/.config/nvim/plugins/fugitive.vim
 source ~/.config/nvim/plugins/nerdcommenter.vim
+source ~/.config/nvim/plugins/jupyternotebooks.vim
 
 
 source ~/.config/nvim/plugins/splits.vim
@@ -27,7 +28,7 @@ source ~/.config/nvim/plugins/vimdebug.vim
 source ~/.config/nvim/plugins/table_mode.vim
 source ~/.config/nvim/plugins/vim_markdown.vim
 source ~/.config/nvim/plugins/which-key.vim
-source ~/.config/nvim/plugins/tailwindcss3.vim
+" source ~/.config/nvim/plugins/tailwindcss3.vim
 source ~/.config/nvim/plugins/mergetool.vim
 source ~/.config/nvim/plugins/harpoon.vim
 source ~/.config/nvim/plugins/startupsnvim.vim
