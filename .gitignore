@@ -5,3 +5,8 @@ configFiles/vifmConfig/vifm/vifminfo.json
 .cfg
 .config/fish/functions/*
 .config/fish/conf.d/*
+/configFiles/vim/.vim/*
+!/configFiles/vim/.vim/pack/
+!/configFiles/vim/.vim/spell/
+configFiles/vifmConfig/vifm/vifminfo.json
+.cfg
