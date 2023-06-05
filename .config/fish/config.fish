@@ -40,6 +40,8 @@ set -gx PATH $GOPATH/bin $PATH
 
 # set -gx PATH $HOME/anaconda3/bin $PATH  # commented out by conda initialize
 
+# set nvim as editor
+set -gx EDITOR nvim
 
 
 starship init fish | source
