@@ -17,6 +17,14 @@ local deco = {
   tasklist  = require("deco.tasklist")
 }
 
+local cpuwidget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
+local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
+local volume_widget   = require("awesome-wm-widgets.volume-widget.volume")
+local logout_menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
+local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
+local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
+
+
 local taglist_buttons  = deco.taglist()
 local tasklist_buttons = deco.tasklist()
 
@@ -28,6 +36,22 @@ local _M = {}
 -- {{{ Wibar
 -- Create a textclock widget
 local mytextclock = wibox.widget.textclock()
+local cw = calendar_widget({
+    -- theme = 'nord',
+    placement = 'top_right',
+    start_sunday = false,
+    radius = 0,
+    previous_month_button = 1,
+    next_month_button = 3,
+})
+mytextclock:connect_signal("button::press", cw.toggle)
+
+local brightnessWidget = brightness_widget{
+    type = 'arc',
+    program = 'brightnessctl',
+    step = 1, 
+}
+-- brightnessWidget:connect_signal("button::press",function () brightness_widget:inc() end)
 
 -- awful.screen.connect_for_each_screen(function(s)
 --   beautiful.at_screen_connect(s)
@@ -82,8 +106,16 @@ awful.screen.connect_for_each_screen(function(s)
       {
         wibox.widget.systray(), --show aplication widget
         widget = wibox.container.background,
+        --  batteryarc_widget({
+        --     show_current_level = true,
+        --     arc_thickness = 2,
+        -- }),
+        volume_widget({ widget_type = 'arc' }),
+        -- brightnessWidget,
         -- mykeyboardlayout,
         mytextclock,
+        logout_menu_widget(),
+
         layout = wibox.layout.fixed.horizontal,
       },
 
