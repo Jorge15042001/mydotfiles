@@ -30,6 +30,7 @@ lsp.set_preferences({
 print(cmp.mapping)
 
 lsp.setup_nvim_cmp({
+    select_behavior = 'insert',
   sources = {
     {name = 'path'},
     {name = 'nvim_lsp', keyword_length = 0},
@@ -58,6 +59,12 @@ lsp.setup_nvim_cmp({
 
 
 lsp.setup()
+
+cmp.setup({
+  mapping = {
+    ['<CR>'] = cmp.mapping.confirm({select = true}),
+  }
+})
 
 vim.diagnostic.config({
   virtual_text = true,
