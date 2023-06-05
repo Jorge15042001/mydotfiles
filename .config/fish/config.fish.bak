@@ -24,16 +24,10 @@ alias config '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias vimdiff='nvim -d'
 
 
-
-#set EDITOR
-set  EDITOR /usr/bin/nvim
-
-
 ## setting  PATH to read from ~/.usr_scripts
 set -gx PATH $HOME/.usr_scripts $PATH
 
 
-set -gx PATH /usr/lib $PATH
 
 ## Lenguaje Go
 set --export GOROOT /usr/local/go
@@ -48,12 +42,4 @@ starship init fish | source
 fish_vi_key_bindings
 neofetch 
 
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if test -f /home/jorge1504/anaconda3/bin/conda
-    eval /home/jorge1504/anaconda3/bin/conda "shell.fish" "hook" $argv | source
-end
-# <<< conda initialize <<<
 
