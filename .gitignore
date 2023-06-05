@@ -3,3 +3,5 @@
 !/configFiles/vim/.vim/spell/
 configFiles/vifmConfig/vifm/vifminfo.json
 .cfg
+.config/fish/functions/*
+.config/fish/conf.d/*
