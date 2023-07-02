@@ -106,10 +106,10 @@ awful.screen.connect_for_each_screen(function(s)
       {
         wibox.widget.systray(), --show aplication widget
         widget = wibox.container.background,
-        --  batteryarc_widget({
-        --     show_current_level = true,
-        --     arc_thickness = 2,
-        -- }),
+         batteryarc_widget({
+            show_current_level = true,
+            arc_thickness = 2,
+        }),
         volume_widget({ widget_type = 'arc' }),
         -- brightnessWidget,
         -- mykeyboardlayout,

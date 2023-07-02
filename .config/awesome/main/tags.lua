@@ -23,7 +23,7 @@ function _M.get()
     local height = s.geometry.height
     local layout_idx = (height > width and { 3 } or { 1 })[1]
     tags[s] = awful.tag(
-      { "〇", "〇", "〇", "〇", "〇", "〇", "〇", "〇", "〇" }, s, CONFIG.layouts[layout_idx]
+      { "⬤ ","⬤ ","⬤ ","⬤ ","⬤ ","⬤ ","⬤ ","⬤ ","⬤ ",}, s, CONFIG.layouts[layout_idx]
     )
   end)
   return tags

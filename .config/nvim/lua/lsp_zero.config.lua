@@ -29,7 +29,7 @@ lsp.set_preferences({
 
 
 lsp.setup_nvim_cmp({
-  select_behavior = 'insert',
+    select_behavior = 'insert',
   sources = {
     {name = 'path'},
     {name = 'nvim_lsp', keyword_length = 0},
