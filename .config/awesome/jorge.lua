@@ -41,24 +41,24 @@ beautiful.init(string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv
 --beautiful.init("/home/jorge1504/.files/configFiles/awesomewm/awesome/themes/jorge-theme/theme.lua")
 
 -- Custom Local Library
-local main      = {
+local main             = {
   layouts = require("main.layouts"),
   tags    = require("main.tags"),
   menu    = require("main.menu"),
   rules   = require("main.rules"),
 }
-CONFIG.layouts  = main.layouts()
-CONFIG.tags     = main.tags()
-CONFIG.mainmenu = awful.menu({ items = main.menu() })
-CONFIG.launcher = awful.widget.launcher(
+CONFIG.layouts         = main.layouts()
+CONFIG.tags            = main.tags()
+CONFIG.mainmenu        = awful.menu({ items = main.menu() })
+CONFIG.launcher        = awful.widget.launcher(
   { image = beautiful.awesome_icon, menu = CONFIG.mainmenu }
 )
 
 -- set terminal emulator
 menubar.utils.terminal = CONFIG.vars.terminal
-awful.util.terminal = CONFIG.vars.terminal
+awful.util.terminal    = CONFIG.vars.terminal
 -- keys binding
-local bindings = {
+local bindings         = {
   globalbuttons = require("bindings.globalbuttons"),
   clientbuttons = require("bindings.clientbuttons"),
   globalkeys    = require("bindings.globalkeys"),
@@ -67,8 +67,8 @@ local bindings = {
 }
 
 -- {{{ Mouse bindings
-CONFIG.globalkeys = bindings.globalkeys()
-CONFIG.globalkeys = bindings.bindtotags(CONFIG.globalkeys)
+CONFIG.globalkeys      = bindings.globalkeys()
+CONFIG.globalkeys      = bindings.bindtotags(CONFIG.globalkeys)
 -- }}}
 
 -- {{{set root
@@ -86,13 +86,16 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 awesome.connect_signal(
   'startup',
   function(args)
-    os.execute("nvidia-settings --assign CurrentMetaMode=\"nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }\"")
+    os.execute(
+      "nvidia-settings --assign CurrentMetaMode=\"nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }\"")
     -- connect to barrier server
     -- os.execute("barrierc --disable-crypto  --name jorgeLaptop 192.168.100.41")
-    os.execute(string.format("barriers  --disable-client-cert-checking --disable-crypto -c %s/.config/barrier/barrier.conf",os.getenv("HOME")))
+    os.execute(string.format(
+      "barriers  --disable-client-cert-checking --disable-crypto -c %s/.config/barrier/barrier.conf", os.getenv("HOME")))
 
     -- set screen configuration
-    os.execute("bash -c '/usr/bin/xrandr --output DVI-D-0 --off --output HDMI-0 --mode 2560x1440 --pos 2560x0 --rotate right --output DP-0 --off --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --mode 2560x1440 --pos 0x0 --rotate normal --output DP-5 --off'")
+    os.execute(
+      "bash -c 'xrandr --output DVI-D-0 --off --output HDMI-0 --mode 2560x1440 --pos 2560x0 --rotate normal --output DP-0 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-5 --off'")
   end
 )
 

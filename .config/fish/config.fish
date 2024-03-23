@@ -61,3 +61,14 @@ if test -f /home/jorge1504/anaconda3/bin/conda
 end
 # <<< conda initialize <<<
 
+
+
+
+
+
+
+
+
+pyenv init - | source
+status --is-interactive; and source (pyenv virtualenv-init -|psub)
+

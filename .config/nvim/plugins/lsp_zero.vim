@@ -15,6 +15,6 @@ Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'rafamadriz/friendly-snippets'
 
-Plug 'VonHeikemen/lsp-zero.nvim'
+Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v3.x'}
 
 autocmd User PlugLoaded ++nested luafile ~/.config/nvim/lua/lsp_zero.config.lua
