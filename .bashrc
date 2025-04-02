@@ -161,3 +161,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+. "$HOME/.cargo/env" 
+#export PATH="/home/jorge1504/Downloads/bin:$PATH"

@@ -1,0 +1,5 @@
+Plug 'tjdevries/colorbuddy.vim'
+Plug 'Th3Whit3Wolf/onebuddy'
+
+" And then somewhere in your init.vim, to set the colorscheme
+" lua require('colorbuddy').colorscheme('onebuddy')

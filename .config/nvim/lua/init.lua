@@ -46,4 +46,3 @@ map('n',"gf",":edit <cfile><cr>",{silent = true})
 map('v',"<","<gv",{silent = true})
 map('v',">",">gv",{silent = true})
 
-

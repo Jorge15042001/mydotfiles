@@ -10,8 +10,11 @@ call plug#begin (data_dir . "/plugins")
 
 source ~/.config/nvim/plugins/nvim-tree.vim
 source ~/.config/nvim/plugins/status-line.vim
-source ~/.config/nvim/plugins/transparent.vim
-source ~/.config/nvim/plugins/oneNeoVim.vim "colorscheme
+source ~/.config/nvim/plugins/quart-nvim.vim
+" source ~/.config/nvim/plugins/transparent.vim
+" source ~/.config/nvim/plugins/oneNeoVim.vim "colorscheme
+" source ~/.config/nvim/plugins/oneBuddy.vim "colorscheme
+source ~/.config/nvim/plugins/onedark.vim "colorscheme
 " source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/lsp_zero.vim
 source ~/.config/nvim/plugins/lsp_arduino.vim
