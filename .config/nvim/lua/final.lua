@@ -1,3 +1,5 @@
 
 --colorscheme
-vim.api.nvim_command [[colorscheme one-nvim]]
+vim.api.nvim_command [[colorscheme onedark]]
+--Lua:
+-- vim.g.material_style = "deep ocean"

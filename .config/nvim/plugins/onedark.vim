@@ -1,0 +1,1 @@
+Plug 'olimorris/onedarkpro.nvim'

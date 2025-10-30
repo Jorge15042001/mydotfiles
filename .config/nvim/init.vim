@@ -12,6 +12,8 @@ source ~/.config/nvim/plugins/nvim-tree.vim
 source ~/.config/nvim/plugins/status-line.vim
 source ~/.config/nvim/plugins/transparent.vim
 source ~/.config/nvim/plugins/oneNeoVim.vim "colorscheme
+source ~/.config/nvim/plugins/meterialNvim.vim "colorscheme
+source ~/.config/nvim/plugins/onedark.vim "colorscheme
 " source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/lsp_zero.vim
 source ~/.config/nvim/plugins/lsp_arduino.vim
@@ -21,6 +23,8 @@ source ~/.config/nvim/plugins/gitgutter.vim
 source ~/.config/nvim/plugins/fugitive.vim
 source ~/.config/nvim/plugins/nerdcommenter.vim
 source ~/.config/nvim/plugins/jupyternotebooks.vim
+source ~/.config/nvim/plugins/plantuml.vim
+source ~/.config/nvim/plugins/plantuml-soil.vim
 
 
 source ~/.config/nvim/plugins/splits.vim

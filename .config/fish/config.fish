@@ -72,3 +72,11 @@ end
 pyenv init - | source
 status --is-interactive; and source (pyenv virtualenv-init -|psub)
 
+
+
+# allice vision
+# set --export QT_QPA_PLATFORM wayland
+# set --export ALICEVISION_ROOT /usr
+# set -gx PATH $ALICEVISION_ROOT/bin $PATH
+# set -gx LD_LIBRARY_PATH $ALICEVISION_ROOT/lib $LD_LIBRARY_PATH
+# set --export ALICEVISION_SENSOR_DB /usr/share/aliceVision/cameraSensors.db
