@@ -1,15 +1,15 @@
-require('lspconfig').ltex.setup {
-  settings = {
-    ltex = {
-      language = "en-US",
-      java = {
-        path = "java"
-      },
-      enabled = { "markdown", "text", "tex" },
-      server = {
-        uri = "http://localhost:8081"
-      }
-    },
-  }
-}
-
+-- require('lspconfig').ltex.setup {
+--   settings = {
+--     ltex = {
+--       language = "en-US",
+--       java = {
+--         path = "java"
+--       },
+--       enabled = { "markdown", "text", "tex" },
+--       server = {
+--         uri = "http://localhost:8081"
+--       }
+--     },
+--   }
+-- }
+--
