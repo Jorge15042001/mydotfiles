@@ -23,10 +23,13 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {},
   handlers = {
-    lsp_zero.default_setup,
-    lua_ls = function()
-      local lua_opts = lsp_zero.nvim_lua_ls()
-      require('lspconfig').lua_ls.setup(lua_opts)
+    -- lsp_zero.default_setup,
+    -- lua_ls = function()
+    --   local lua_opts = lsp_zero.nvim_lua_ls()
+    --   require('lspconfig').lua_ls.setup(lua_opts)
+    -- end,
+    function(server_name)
+      require('lspconfig')[server_name].setup({})
     end,
   }
 })
@@ -69,7 +72,13 @@ cmp.setup({
     completeopt = 'menu,menuone,noinsert'
   },
   window = {
+   completion = cmp.config.window.bordered(),
     documentation = cmp.config.window.bordered(),
+  },
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end,
   },
   sources = {
     { name = 'path' },
@@ -80,7 +89,7 @@ cmp.setup({
   },
   mapping = cmp.mapping.preset.insert({
     -- confirm completion item
-    ['<CR>'] = cmp.mapping.confirm({ select = false }),
+    ['<CR>'] = cmp.mapping.confirm({ select = true}),
 
     -- toggle completion menu
     ['<C-e>'] = cmp_action.toggle_completion(),
@@ -98,6 +107,7 @@ cmp.setup({
     ['<C-u>'] = cmp.mapping.scroll_docs(-5),
   }),
 })
+
 
 map("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>", { silent = true })
 map("n", "<leader>ac", ":lua vim.lsp.buf.code_action()<CR>", { silent = true })

@@ -16,7 +16,7 @@ source ~/.config/nvim/plugins/meterialNvim.vim "colorscheme
 source ~/.config/nvim/plugins/onedark.vim "colorscheme
 " source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/lsp_zero.vim
-source ~/.config/nvim/plugins/lsp_arduino.vim
+" source ~/.config/nvim/plugins/lsp_arduino.vim
 source ~/.config/nvim/plugins/floaterm.vim
 source ~/.config/nvim/plugins/treesitter.vim
 source ~/.config/nvim/plugins/gitgutter.vim
@@ -36,6 +36,11 @@ source ~/.config/nvim/plugins/which-key.vim
 source ~/.config/nvim/plugins/mergetool.vim
 source ~/.config/nvim/plugins/harpoon.vim
 source ~/.config/nvim/plugins/startupsnvim.vim
+" source ~/.config/nvim/plugins/harper.vim
+" source ~/.config/nvim/plugins/grammarly.vim
+" source ~/.config/nvim/plugins/ltex.vim
+
+
 
 call plug#end ()
 
