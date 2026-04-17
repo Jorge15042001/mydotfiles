@@ -46,4 +46,6 @@ map('n',"gf",":edit <cfile><cr>",{silent = true})
 map('v',"<","<gv",{silent = true})
 map('v',">",">gv",{silent = true})
 
-
+-- Move by screen lines when no count is given
+vim.keymap.set({'n','x'}, 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+vim.keymap.set({'n','x'}, 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })

@@ -41,6 +41,7 @@ source ~/.config/nvim/plugins/startupsnvim.vim
 " source ~/.config/nvim/plugins/ltex.vim
 
 
+" source ~/.config/nvim/plugins/claudecode.vim
 
 call plug#end ()
 
